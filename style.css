@@ -20,6 +20,7 @@ header {
 
 .resp_menu_box {
     position: absolute;
+    position:fixed;
     display: flex;
     flex-direction: column;
     top: 72px;
