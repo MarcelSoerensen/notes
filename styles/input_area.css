@@ -1,3 +1,4 @@
+
 .input_area {
     height: 155px;
     width: 500px;
@@ -5,7 +6,7 @@
     flex-direction: column;
     justify-content: space-between;
     border-radius: 8px;
-    background-color: rgba(40, 40, 40, 1);
+    background-color: rgba(50, 50, 50, 1);
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
     transition: 0.6s ease all;    
@@ -30,7 +31,7 @@
     margin:  8px 16px 0 16px;
     border: 1px solid rgba(165, 165, 165, 0);
     border-radius: 4px;
-    background-color: rgba(40, 40, 40, 1);
+    background-color: rgba(0, 0, 0, 0);
     color: rgba(220, 220, 220, 1);
     font-size: 16px;
     font-weight: small;
@@ -40,21 +41,13 @@
 
 .input_area input:hover, textarea:hover{
     border: 1px solid rgba(165, 165, 165, 0.5);
-    background-color: rgba(40, 40, 40, 1);
+    background-color:rgba(0, 0, 0, 0);
     box-shadow: 0 0 8px 1px  rgba(0, 153, 255, 0.3) ; 
 }
 
 .input_area input:focus, textarea:focus{
     border: 1px solid rgba(165, 165, 165, 0.5);
     box-shadow: 0 0 8px 1px  rgba(0, 153, 255, 0.3) ; 
-}
-
-.input_area img{
-    height: 32px;
-    width: 32px;
-    margin:2px;
-    cursor: pointer;
-    transition: 0.1s ease all;
 }
 
 .input_area img:hover {

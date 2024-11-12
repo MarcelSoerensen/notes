@@ -17,7 +17,16 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body onload="renderNotes(), renderArchiveNotes(), renderTrashNotes();">
-    <h1>Notizblock</h1> 
+    <header>
+        <h1>Notizblock</h1>
+        <img onclick="toggleRespMenu()" src="./assets/icons/menu-iconsax-svgrepo-com.svg" title="Auswahl" alt="menu">
+    </header>
+    <div id="resp_menu" class="resp_menu_box resp_menu_closed">
+        
+        <a href="">Notizen</a>
+        <a href="">Archiv</a>
+        <a href="">Mülleimer</a>   
+    </div>
     <div class="input_container">
         <div class="input_area">
             <div class="input_top">

@@ -3,13 +3,30 @@
     margin: 0;
     scroll-behavior: smooth;
     font-family: 'Montserrat Alternates';
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body {
+    overflow-x: hidden;
+}
+
+h1 {
+    font-weight: 500;
 }
 
 a{
     text-decoration: none;
 }
 
-p{
-    color: rgba(220, 220, 220, 1);
-    
+a:hover {
+    color: rgba(0, 153, 255, 0.3);
 }
+
+p{
+    display: inline-block;
+}
+
+.d_none {
+    display: none;
+}
+

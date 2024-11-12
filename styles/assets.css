@@ -1,1 +1,18 @@
+img {
+    height: 32px;
+    width: 32px;
+    margin:2px;
+    cursor: pointer;
+    transition: 0.1s ease all;
+}
 
+img:hover {
+    filter: drop-shadow(0px 0px 4px  rgba(0, 153, 255, 1));
+    background-color: rgba(0, 153, 255, 0.3);
+    border-radius: 50%; 
+    box-shadow: 0 0 0 5px  rgba(0, 153, 255, 0.3) ; 
+}
+
+.archive_icon {
+    padding-top: 3px;
+}
