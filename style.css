@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: url(assets/fonts/Montserrat_Alternates/MontserratAlternates-Medium.ttf);
+}
+.input_container {
+    margin: 32px 10% 32px 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.notes_container, .archive_container, .trash_container {
+    height: 50%;
+    margin: 32px 10% 32px 10%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+
+

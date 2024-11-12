@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: 'Montserrat Alternates';
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
+    color: rgba(220, 220, 220, 1);
+    
+}

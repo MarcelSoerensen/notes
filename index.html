@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notizblock</title>
+    
+    <script src="./scripts/render.js"></script>
+    <script src="./scripts/templates.js"></script>
+    <script src="./scripts/local_storage.js"></script>
+    <script src="./script.js"></script>
+
+    <link rel="stylesheet" href="./styles/standard.css">
+    <link rel="stylesheet" href="./styles/input_area.css">
+    <link rel="stylesheet" href="./styles/note.css">
+    <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="renderNotes(), renderArchiveNotes(), renderTrashNotes();">
+    <h1>Notizblock</h1> 
+    <div class="input_container">
+        <div class="input_area">
+            <div class="input_top">
+                <input id="note_title_input" type="text" placeholder="Titel...">
+                <textarea id="note_content_input" placeholder="Deine Notiz..." rows="3"></textarea>
+            </div>
+            <div class="input_bottom">
+                <div></div>
+                <img onclick="addNote()" src="./assets/icons/tick-circle-iconsax-svgrepo-com.svg" title="speichern" alt="save">
+            </div>
+        </div>
+    </div>
+    <h2>notes</h2>
+    <div class="notes_container" id="notes_content">
+
+    </div>
+    <h2>archive</h2>
+    <div class="archive_container" id="archive_content">
+
+    </div>
+    <h2>trash</h2>
+    <div class="trash_container"id="trash_content">
+
+    </div>
+
+</body>
+</html>
