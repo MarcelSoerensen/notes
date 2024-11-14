@@ -21,10 +21,14 @@ h2 {
 
 a{
     text-decoration: none;
+    text-align: left;
+    margin: 4px 16px;
+
 }
 
 a:hover {
-    color: rgba(0, 153, 255, 0.3);
+    background-color: rgba(0, 153, 255, 0.3);
+    border-radius: 4px;
 }
 
 p{
