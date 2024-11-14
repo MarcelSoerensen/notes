@@ -47,7 +47,6 @@ header {
 }
 
 .notes_container, .archive_container, .trash_container {
-    height: 50%;
     margin: 32px 10% 32px 10%;
     display: flex;
     justify-content: center;

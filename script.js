@@ -34,7 +34,6 @@ function pushNoteToArchive(indexNote) {
     archiveNotesContent.push(archiveNote[0]);
     saveAsLocalStorage();
     renderNotes();
-    renderArchiveNotes();
 }
 
 function pushNoteFromNotesToTrash(indexNote) {
@@ -44,7 +43,6 @@ function pushNoteFromNotesToTrash(indexNote) {
     trashNotesContent.push(trashNote[0]);
     saveAsLocalStorage();
     renderNotes();
-    renderTrashNotes();
 }
 
 function pushNoteFromArchiveToTrash(indexArchiveNote) {
@@ -54,7 +52,6 @@ function pushNoteFromArchiveToTrash(indexArchiveNote) {
     trashNotesContent.push(trashNote[0]);
     saveAsLocalStorage();
     renderArchiveNotes();
-    renderTrashNotes();
 }
 
 function restoreNoteFromArchive(indexArchiveNote) {
@@ -63,7 +60,6 @@ function restoreNoteFromArchive(indexArchiveNote) {
     let restoreNoteContent = archiveNotesContent.splice(indexArchiveNote, 1);
     notesContent.push(restoreNoteContent[0]);
     saveAsLocalStorage();
-    renderNotes();
     renderArchiveNotes();    
 }
 
@@ -73,7 +69,6 @@ function restoreNoteFromTrash(indexTrashNote) {
     let restoreNoteContent = trashNotesContent.splice(indexTrashNote, 1);
     notesContent.push(restoreNoteContent[0]);
     saveAsLocalStorage();
-    renderNotes();
     renderTrashNotes();    
 }
 
@@ -85,6 +80,6 @@ function deleteNote(indexTrashNote) {
 }
 
 function toggleRespMenu(){
-    document.getElementById("resp_menu").classList.toggle('resp_menu_closed');
+    document.getElementById("resp_menu").classList.toggle('resp_menu_closed');  
 }
 

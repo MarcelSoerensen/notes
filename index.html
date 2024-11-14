@@ -10,24 +10,25 @@
     <script src="./scripts/local_storage.js"></script>
     <script src="./script.js"></script>
 
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./styles/standard.css">
     <link rel="stylesheet" href="./styles/input_area.css">
     <link rel="stylesheet" href="./styles/note.css">
     <link rel="stylesheet" href="./styles/assets.css">
-    <link rel="stylesheet" href="./style.css">
+    
 </head>
-<body onload="renderNotes(), renderArchiveNotes(), renderTrashNotes();">
+<body onload="renderNotes()">
     <header>
         <h1>Notizblock</h1>
         <img onclick="toggleRespMenu()" src="./assets/icons/menu-iconsax-svgrepo-com.svg" title="Auswahl" alt="menu">
     </header>
     <div id="resp_menu" class="resp_menu_box resp_menu_closed">
         
-        <a href="">Notizen</a>
-        <a href="">Archiv</a>
-        <a href="">Mülleimer</a>   
+        <a onclick="renderNotes(), toggleRespMenu()" href="#">Notizen</a>
+        <a onclick="renderArchiveNotes(), toggleRespMenu()" href="#">Archiv</a>
+        <a onclick="renderTrashNotes(), toggleRespMenu()" href="#">Mülleimer</a>   
     </div>
-    <div class="input_container">
+    <div id="input_content" class="input_container">
         <div class="input_area">
             <div class="input_top">
                 <input id="note_title_input" type="text" placeholder="Titel...">
@@ -39,16 +40,16 @@
             </div>
         </div>
     </div>
-    <h2>notes</h2>
+    <h2 id="headline_notes">Notizen</h2>
     <div class="notes_container" id="notes_content">
 
     </div>
-    <h2>archive</h2>
-    <div class="archive_container" id="archive_content">
+    <h2 id="headline_archive">Archiv</h2>
+    <div class="archive_container d_none" id="archive_content">
 
     </div>
-    <h2>trash</h2>
-    <div class="trash_container"id="trash_content">
+    <h2 id="headline_trash">Mülleimer</h2>
+    <div class="trash_container d_none"id="trash_content">
 
     </div>
 
