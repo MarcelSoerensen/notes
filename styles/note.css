@@ -7,7 +7,6 @@
     border-radius: 8px;
     background-color: rgba(50, 50, 50, 1);
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
     transition: 0.6s ease all;
     white-space: break-spaces ;
     word-break: break-all;
@@ -36,4 +35,36 @@
     display: flex;
     justify-content: space-between;
     margin: 8px;      
+}
+
+.note_on_focus_container {
+    background-color: rgba(50, 50, 50, 0.5);
+    z-index: 99;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    }
+
+.note_on_focus {
+    height: 300px;
+    width: 630px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 8px;
+    background-color: rgba(50, 50, 50, 1);
+    box-shadow: 0px 0px 4px 0 rgba(0, 153, 255, 1);
+    backdrop-filter: blur(10px);
+    white-space: break-spaces ;
+    word-break: break-all;
+}
+
+.d_none {
+    display: none;
 }

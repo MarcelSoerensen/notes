@@ -1,7 +1,7 @@
 
 .input_area {
     height: 155px;
-    width: 80vw;
+    width: 630px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

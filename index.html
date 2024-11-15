@@ -19,7 +19,7 @@
 </head>
 <body onload="renderNotes()">
     <header>
-        <h1>Notizblock</h1>
+        <h1 onclick="renderNotes()">Notizblock</h1>
         <img onclick="toggleRespMenu()" src="./assets/icons/menu-iconsax-svgrepo-com.svg" title="Auswahl" alt="menu">
     </header>
     <div id="resp_menu" class="resp_menu_box resp_menu_closed">
@@ -39,18 +39,20 @@
             </div>
         </div>
     </div>
-    <h2 id="headline_notes">Notizen</h2>
+    <h2 class="d_none" id="headline_notes">Notizen</h2>
     <div class="notes_container" id="notes_content">
 
     </div>
-    <h2 id="headline_archive">Archiv</h2>
+    <h2 class="d_none" id="headline_archive">Archiv</h2>
     <div class="archive_container d_none" id="archive_content">
 
     </div>
-    <h2 id="headline_trash">Mülleimer</h2>
+    <h2 class="d_none" id="headline_trash">Mülleimer</h2>
     <div class="trash_container d_none"id="trash_content">
-
     </div>
+
+    <div onclick="closeNoteOnFocus()" class="note_on_focus_container d_none" id="note_on_focus_content">
+        </div>
 
 </body>
 </html>

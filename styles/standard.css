@@ -12,6 +12,12 @@ body {
 
 h1 {
     font-weight: 500;
+    color: rgba(199, 199, 199, 1);  
+}
+
+h1:hover {
+    text-shadow: 0 0px 3px rgba(0, 153, 255, 1);
+    cursor: pointer;
 }
 
 h2 {
@@ -23,7 +29,6 @@ a{
     text-decoration: none;
     text-align: left;
     margin: 4px 16px;
-
 }
 
 a:hover {
@@ -35,7 +40,4 @@ p{
     display: inline-block;
 }
 
-.d_none {
-    display: none;
-}
 
