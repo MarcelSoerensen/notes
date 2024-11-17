@@ -1,7 +1,7 @@
 
 function getNoteTemplate(indexNote) {
     return /*html*/`
-        <div onclick="renderNoteOnFocus()" class="note">
+        <div onclick="renderNoteOnFocus(${indexNote})" class="note">
             <p class="note_top"><b>${notesTitles[indexNote]}</b></p>
             <p class="note_middle">${notesContent[indexNote]}</p>
             <div class="note_bottom">
@@ -14,7 +14,7 @@ function getNoteTemplate(indexNote) {
 
 function getArchiveNoteTemplate(indexArchiveNote) {
     return /*html*/`
-        <div onclick="renderNoteOnFocus()" class="note">
+        <div onclick="renderArchiveOnFocus(${indexArchiveNote})" class="note">
             <p class="note_top"><b>${archiveNotesTitles[indexArchiveNote]}</b></p>
             <p class="note_middle">${archiveNotesContent[indexArchiveNote]}</p>
             <div class="note_bottom">
@@ -27,7 +27,7 @@ function getArchiveNoteTemplate(indexArchiveNote) {
 
 function getTrashNoteTemplate(indexTrashNote) {
     return /*html*/`
-        <div onclick="renderNoteOnFocus()" class="note">
+        <div onclick="renderTrashOnFocus(${indexTrashNote})" class="note">
             <p class="note_top"><b>${trashNotesTitles[indexTrashNote]}</b></p>
             <p class="note_middle">${trashNotesContent[indexTrashNote]}</p>
             <div class="note_bottom">
@@ -38,14 +38,49 @@ function getTrashNoteTemplate(indexTrashNote) {
         `;
 }
 
-function getNoteOnFocus() {
+function getNoteOnFocus(i) {
     return /*html*/`
         <div onclick="overlayPrevention(event)" class="note_on_focus" >
-            <p class="note_top"><b>${notesTitles}</b></p>
-            <p class="note_middle">${notesContent}</p>
+            <p class="note_top"><b>${notesTitles[i]}</b></p>
+            <p class="note_middle">${notesContent[i]}</p>
             <div class="note_bottom">
-                <div></div>
-                <img onclick="closeNoteOnFocus()" src="./assets/icons/close-circle-iconsax-svgrepo-com.svg" title="löschen" alt="delete">
+                <div class="note_on_focus_buttons">
+                    <img class="archive_icon" onclick="pushNoteToArchive(${i}), overlayPrevention(event)" src="./assets/icons/archive-iconsax-svgrepo-com.svg" title="archivieren" alt="archive">
+                    <img onclick="pushNoteFromNotesToTrash(${i}), overlayPrevention(event)" src="./assets/icons/trash-iconsax-svgrepo-com.svg" title="wegwerfen" alt="trash"> 
+                </div>
+                <img onclick="closeFocusedContent()" src="./assets/icons/close-circle-iconsax-svgrepo-com.svg" title="löschen" alt="delete">
+            </div>
+        </div>
+        `;
+}
+
+function getArchiveOnFocus(i) {
+    return /*html*/`
+        <div onclick="overlayPrevention(event)" class="note_on_focus" >
+            <p class="note_top"><b>${archiveNotesTitles[i]}</b></p>
+            <p class="note_middle">${archiveNotesContent[i]}</p>
+            <div class="note_bottom">
+                <div class="note_on_focus_buttons">
+                    <img onclick="restoreNoteFromArchive(${i}), overlayPrevention(event)" src="./assets/icons/rotate-right-iconsax-svgrepo-com.svg" title="wiederherstellen" alt="restore">
+                    <img onclick="pushNoteFromArchiveToTrash(${i}), overlayPrevention(event)" src="./assets/icons/trash-iconsax-svgrepo-com.svg" title="wegwerfen" alt="trash">
+                </div>
+                <img onclick="closeFocusedContent()" src="./assets/icons/close-circle-iconsax-svgrepo-com.svg" title="löschen" alt="delete">
+            </div>
+        </div>
+        `;
+}
+
+function getTrashOnFocus(i) {
+    return /*html*/`
+        <div onclick="overlayPrevention(event)" class="note_on_focus" >
+            <p class="note_top"><b>${trashNotesTitles[i]}</b></p>
+            <p class="note_middle">${trashNotesContent[i]}</p>
+            <div class="note_bottom">
+                <div class="note_on_focus_buttons">
+                    <img onclick="restoreNoteFromTrash(${i}), overlayPrevention(event)" src="./assets/icons/rotate-right-iconsax-svgrepo-com.svg" title="wiederherstellen" alt="restore">
+                    <img onclick="deleteNote(${i}), overlayPrevention(event)" src="./assets/icons/close-circle-iconsax-svgrepo-com.svg" title="löschen" alt="delete">
+                </div>
+                <img onclick="closeFocusedContent()" src="./assets/icons/close-circle-iconsax-svgrepo-com.svg" title="löschen" alt="delete">
             </div>
         </div>
         `;
