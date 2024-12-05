@@ -9,7 +9,7 @@ function renderNotes() {
     contentRef.classList.remove('d_none');
     contentRef.innerHTML = "";
     
-    for (let indexNote = 0; indexNote < notesContent.length; indexNote++) {
+    for (let indexNote = 0; indexNote < allNotes.notesContent.length; indexNote++) {
         contentRef.innerHTML += getNoteTemplate(indexNote);
     }
 }
@@ -23,7 +23,7 @@ function renderArchiveNotes() {
     archiveContentRef.classList.remove('d_none');
     archiveContentRef.innerHTML = "";
     
-    for (let indexArchiveNote = 0; indexArchiveNote < archiveNotesContent.length; indexArchiveNote++) {
+    for (let indexArchiveNote = 0; indexArchiveNote < allNotes.archiveNotesContent.length; indexArchiveNote++) {
         archiveContentRef.innerHTML += getArchiveNoteTemplate(indexArchiveNote);   
     }
 }
@@ -37,7 +37,7 @@ function renderTrashNotes() {
     trashContentRef.classList.remove('d_none');
     trashContentRef.innerHTML = "";
     
-    for (let indexTrashNote = 0; indexTrashNote < trashNotesContent.length; indexTrashNote++) {
+    for (let indexTrashNote = 0; indexTrashNote < allNotes.trashNotesContent.length; indexTrashNote++) {
         trashContentRef.innerHTML += getTrashNoteTemplate(indexTrashNote);   
     }   
 }

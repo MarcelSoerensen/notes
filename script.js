@@ -1,13 +1,12 @@
 
-let notesTitles = [];
-let notesContent = [];
-
-let archiveNotesTitles = [];
-let archiveNotesContent = [];
-
-let trashNotesTitles = [];
-let trashNotesContent = [];
-
+let allNotes = {
+    'notesTitles': [],
+    'notesContent': [],
+    'archiveNotesTitles': [],
+    'archiveNotesContent': [],
+    'trashNotesTitles': [],
+    'trashNotesContent': []
+}
 getNotesFromLocalStorage();
 getArchiveFromLocalStorage();
 getTrashFromLocalStorage();
@@ -17,8 +16,8 @@ function addNote() {
     let noteContentInputRef = document.getElementById('note_content_input');
     
     if (noteTitleInputRef.value && noteContentInputRef.value != "") {
-        notesTitles.push(noteTitleInputRef.value);
-        notesContent.push(noteContentInputRef.value);
+        allNotes.notesTitles.push(noteTitleInputRef.value);
+        allNotes.notesContent.push(noteContentInputRef.value);
     }
     
     saveAsLocalStorage();
@@ -28,53 +27,53 @@ function addNote() {
 }
 
 function pushNoteToArchive(indexNote) {
-    let archiveNoteTitle = notesTitles.splice(indexNote, 1);
-    archiveNotesTitles.push(archiveNoteTitle[0]);
-    let archiveNote = notesContent.splice(indexNote, 1);
-    archiveNotesContent.push(archiveNote[0]);
+    let archiveNoteTitle = allNotes.notesTitles.splice(indexNote, 1);
+    allNotes.archiveNotesTitles.push(archiveNoteTitle[0]);
+    let archiveNote = allNotes.notesContent.splice(indexNote, 1);
+    allNotes.archiveNotesContent.push(archiveNote[0]);
     saveAsLocalStorage();
     renderNotes();
 }
 
 function pushNoteFromNotesToTrash(indexNote) {
-    let trashNoteTitle = notesTitles.splice(indexNote, 1);
-    trashNotesTitles.push(trashNoteTitle[0]);
-    let trashNote = notesContent.splice(indexNote, 1);
-    trashNotesContent.push(trashNote[0]);
+    let trashNoteTitle = allNotes.notesTitles.splice(indexNote, 1);
+    allNotes.trashNotesTitles.push(trashNoteTitle[0]);
+    let trashNote = allNotes.notesContent.splice(indexNote, 1);
+    allNotes.trashNotesContent.push(trashNote[0]);
     saveAsLocalStorage();
     renderNotes();
 }
 
 function pushNoteFromArchiveToTrash(indexArchiveNote) {
-    let trashNoteTitle = archiveNotesTitles.splice(indexArchiveNote, 1);
-    trashNotesTitles.push(trashNoteTitle[0]);
-    let trashNote = archiveNotesContent.splice(indexArchiveNote, 1);
-    trashNotesContent.push(trashNote[0]);
+    let trashNoteTitle = allNotes.archiveNotesTitles.splice(indexArchiveNote, 1);
+    allNotes.trashNotesTitles.push(trashNoteTitle[0]);
+    let trashNote = allNotes.archiveNotesContent.splice(indexArchiveNote, 1);
+    allNotes.trashNotesContent.push(trashNote[0]);
     saveAsLocalStorage();
     renderArchiveNotes();
 }
 
 function restoreNoteFromArchive(indexArchiveNote) {
-    let restoreNoteTitle = archiveNotesTitles.splice(indexArchiveNote, 1);
-    notesTitles.push(restoreNoteTitle[0]);
-    let restoreNoteContent = archiveNotesContent.splice(indexArchiveNote, 1);
-    notesContent.push(restoreNoteContent[0]);
+    let restoreNoteTitle = allNotes.archiveNotesTitles.splice(indexArchiveNote, 1);
+    allNotes.notesTitles.push(restoreNoteTitle[0]);
+    let restoreNoteContent = allNotes.archiveNotesContent.splice(indexArchiveNote, 1);
+    allNotes.notesContent.push(restoreNoteContent[0]);
     saveAsLocalStorage();
     renderArchiveNotes();    
 }
 
 function restoreNoteFromTrash(indexTrashNote) {
-    let restoreNoteTitle = trashNotesTitles.splice(indexTrashNote, 1);
-    notesTitles.push(restoreNoteTitle[0]);
-    let restoreNoteContent = trashNotesContent.splice(indexTrashNote, 1);
-    notesContent.push(restoreNoteContent[0]);
+    let restoreNoteTitle = allNotes.trashNotesTitles.splice(indexTrashNote, 1);
+    allNotes.notesTitles.push(restoreNoteTitle[0]);
+    let restoreNoteContent = allNotes.trashNotesContent.splice(indexTrashNote, 1);
+    allNotes.notesContent.push(restoreNoteContent[0]);
     saveAsLocalStorage();
     renderTrashNotes();    
 }
 
 function deleteNote(indexTrashNote) {
-    trashNotesTitles.splice(indexTrashNote, 1)
-    trashNotesContent.splice(indexTrashNote, 1);
+    allNotes.trashNotesTitles.splice(indexTrashNote, 1)
+    allNotes.trashNotesContent.splice(indexTrashNote, 1);
     saveAsLocalStorage();
     renderTrashNotes();
 }

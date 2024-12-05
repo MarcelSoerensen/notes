@@ -1,11 +1,11 @@
 
 function saveAsLocalStorage() {
-    localStorage.setItem("notesTitles", JSON.stringify(notesTitles));
-    localStorage.setItem("notesContent", JSON.stringify(notesContent));
-    localStorage.setItem("trashNotesTitles", JSON.stringify(trashNotesTitles));
-    localStorage.setItem("trashNotesContent", JSON.stringify(trashNotesContent));
-    localStorage.setItem("archiveNotesTitles", JSON.stringify(archiveNotesTitles));
-    localStorage.setItem("archiveNotesContent", JSON.stringify(archiveNotesContent));
+    localStorage.setItem("notesTitles", JSON.stringify(allNotes.notesTitles));
+    localStorage.setItem("notesContent", JSON.stringify(allNotes.notesContent));
+    localStorage.setItem("trashNotesTitles", JSON.stringify(allNotes.trashNotesTitles));
+    localStorage.setItem("trashNotesContent", JSON.stringify(allNotes.trashNotesContent));
+    localStorage.setItem("archiveNotesTitles", JSON.stringify(allNotes.archiveNotesTitles));
+    localStorage.setItem("archiveNotesContent", JSON.stringify(allNotes.archiveNotesContent));
 }
 
 function getNotesFromLocalStorage() {
@@ -13,8 +13,8 @@ function getNotesFromLocalStorage() {
     let notesContentArray = JSON.parse(localStorage.getItem("notesContent"));
     
     if (notesTitlesArray && notesContentArray != "") {
-        notesTitles = notesTitlesArray;
-        notesContent = notesContentArray;
+        allNotes.notesTitles = notesTitlesArray;
+        allNotes.notesContent = notesContentArray;
     }   
 }
 
@@ -23,8 +23,8 @@ function getArchiveFromLocalStorage() {
     let archiveNotesContentArray = JSON.parse(localStorage.getItem("archiveNotesContent"));
 
     if (archiveNotesTitlesArray && archiveNotesContentArray !="") {
-        archiveNotesTitles = archiveNotesTitlesArray;
-        archiveNotesContent = archiveNotesContentArray;
+        allNotes.archiveNotesTitles = archiveNotesTitlesArray;
+        allNotes.archiveNotesContent = archiveNotesContentArray;
     }
 }
 
@@ -33,7 +33,7 @@ function getTrashFromLocalStorage() {
     let trashNotesContentArray = JSON.parse(localStorage.getItem("trashNotesContent"));
     
     if (trashNotesTitlesArray && trashNotesContentArray != "") {
-        trashNotesTitles = trashNotesTitlesArray;
-        trashNotesContent = trashNotesContentArray;
+        allNotes.trashNotesTitles = trashNotesTitlesArray;
+        allNotes.trashNotesContent = trashNotesContentArray;
     }
 }
