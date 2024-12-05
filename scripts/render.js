@@ -9,7 +9,7 @@ function renderNotes() {
     contentRef.classList.remove('d_none');
     contentRef.innerHTML = "";
     
-    for (let indexNote = 0; indexNote < allNotes.notesContent.length; indexNote++) {
+    for (let indexNote = 0; indexNote < allNotes.notes.length; indexNote++) {
         contentRef.innerHTML += getNoteTemplate(indexNote);
     }
 }
@@ -23,7 +23,7 @@ function renderArchiveNotes() {
     archiveContentRef.classList.remove('d_none');
     archiveContentRef.innerHTML = "";
     
-    for (let indexArchiveNote = 0; indexArchiveNote < allNotes.archiveNotesContent.length; indexArchiveNote++) {
+    for (let indexArchiveNote = 0; indexArchiveNote < allNotes.archiveNotes.length; indexArchiveNote++) {
         archiveContentRef.innerHTML += getArchiveNoteTemplate(indexArchiveNote);   
     }
 }
@@ -37,30 +37,30 @@ function renderTrashNotes() {
     trashContentRef.classList.remove('d_none');
     trashContentRef.innerHTML = "";
     
-    for (let indexTrashNote = 0; indexTrashNote < allNotes.trashNotesContent.length; indexTrashNote++) {
+    for (let indexTrashNote = 0; indexTrashNote < allNotes.trashNotes.length; indexTrashNote++) {
         trashContentRef.innerHTML += getTrashNoteTemplate(indexTrashNote);   
     }   
 }
 
-function renderNoteOnFocus(i) {
+function renderNoteOnFocus(indexFocusedNote) {
     let noteOnFocusContentRef = document.getElementById('focused_content');
     noteOnFocusContentRef.classList.remove('d_none');
     noteOnFocusContentRef.innerHTML = "";
-    noteOnFocusContentRef.innerHTML = getNoteOnFocus(i);
+    noteOnFocusContentRef.innerHTML = getNoteOnFocus(indexFocusedNote);
 }
 
-function renderArchiveOnFocus(i) {
+function renderArchiveOnFocus(indexFocusedArchiveNote) {
     let archiveOnFocusContentRef = document.getElementById('focused_content');
     archiveOnFocusContentRef.classList.remove('d_none');
     archiveOnFocusContentRef.innerHTML = "";
-    archiveOnFocusContentRef.innerHTML = getArchiveOnFocus(i);
+    archiveOnFocusContentRef.innerHTML = getArchiveOnFocus(indexFocusedArchiveNote);
 }
 
-function renderTrashOnFocus(i) {
+function renderTrashOnFocus(indexFocusedTrashNote) {
     let trashOnFocusContentRef = document.getElementById('focused_content');
     trashOnFocusContentRef.classList.remove('d_none');
     trashOnFocusContentRef.innerHTML = "";
-    trashOnFocusContentRef.innerHTML = getTrashOnFocus(i);
+    trashOnFocusContentRef.innerHTML = getTrashOnFocus(indexFocusedTrashNote);
 }
 
 function closeFocusedContent() {
