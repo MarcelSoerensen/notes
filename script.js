@@ -28,12 +28,14 @@ function addNote() {
     if (noteTitleInputRef.value && noteInputRef.value != "") {
         allNotes.notesTitles.push(noteTitleInputRef.value);
         allNotes.notes.push(noteInputRef.value);
+        noteTitleInputRef.value = "";
+        noteInputRef.value  = "";
+    } else {
+        alert('Gib einen Titel und eine Notiz ein...');
     }
     
     saveAsLocalStorage();
-    renderNotes();
-    noteTitleInputRef.value = "";
-    noteInputRef.value  = "";
+    renderNotes();  
 }
 
 function deleteNote(indexTrashNote) {
